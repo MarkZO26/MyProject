@@ -1,0 +1,52 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class jackENpoy {
+    public static void main(String[] args){
+        System.out.print("JACK N' POY \n\n");
+        String [] gestures = {"paper","scissor","rock"};
+        String computer, user;
+        int cscore =0, uscore = 0;
+        
+        
+        while (uscore < 3 && cscore < 3){
+            Scanner scan = new Scanner(System.in);
+        				  System.out.println("PAPER, SCISSOR, ROCK");
+            System.out.print("Your turn: ");
+            user = scan.nextLine();
+            
+            Random rand = new Random();
+            computer = gestures[rand.nextInt(gestures.length)];
+            System.out.println("Computer: "+computer);
+            
+            if (user.equals(computer)){
+                System.out.println("It's a Tie \n");
+            }
+            else if (user.equals("paper") && computer.equals("scissor")){
+                System.out.println("You Loss! Computer Win! \n");
+                cscore++;
+            }
+            else if (user.equals("paper") && computer.equals("rock")){
+                System.out.println("Got it! You Win! \n");
+                uscore++;
+            }
+            else if (user.equals("scissor") && computer.equals("paper")){
+                System.out.println("Got it! You Win! \n");
+                uscore++;
+            }
+            else if (user.equals("scissor") && computer.equals("rock")){
+                System.out.println("You Loss! Computer Win! \n");
+                cscore++;
+            }
+            else if (user.equals("rock") && computer.equals("scissor")){
+                System.out.println("Got it! You Win! \n");
+                uscore++;
+            }
+            else if (user.equals("rock") && computer.equals("paper")){
+                System.out.println("You Loss! Computer Win! \n");
+                cscore++;
+            }
+            System.out.println("User: "+uscore+" Computer: "+cscore +"\n");
+    			  	}
+    }
+}
