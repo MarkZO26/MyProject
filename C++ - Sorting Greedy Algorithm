@@ -1,0 +1,93 @@
+//SORTING GREEDY
+
+#include<iostream>
+
+#include<algorithm>
+
+using namespace std;
+
+struct Activity {
+
+          int start, finish;
+
+};
+
+ 
+
+bool compareActivity(const Activity& a1, const Activity& a2){
+
+                 return a1.finish< a2.finish;
+
+}
+
+ 
+
+int main(){
+
+     int Activity activities[] = {{0,1},{3,5},{2,3},{1,2},{9,10},{0,9}};
+
+           int numActivity = 6;
+
+           cout<<"Table in array format";
+
+           for(int i=0; i<numActivity; i++){
+
+                     cout<<"S: "<<activities[i].start<<" F: "<<activities[i].finish<<endl;
+
+}
+
+          sort(activities, activities+numActivity, compareActivity);
+
+          cout<<"Arranged Values";
+
+          for(int i=0; i<numActivity; i++){
+
+                      cout<<"S: "<<activity[i].start<<" F: "<<activity[i].finish<<endl;
+
+}
+
+ 
+
+             int count =1, prevFinish = activity[0].finish;
+
+ 
+
+             cout<<"Greedy Arranged Values";
+
+             cout<<"S: "<<activity[0].start<<activity[0].finish;
+
+ 
+
+              for(int i=0; i<numActivity; i++){
+
+                     if (activity[i].start >= activity[i].finish){
+
+                                cout<<"S: "<<activity[i].start<<" F: "<<activity[i].finish<<endl;
+
+                                                          prevFinish=activity[i].finish;
+
+                                                          count++;
+
+        }
+
+}
+
+            
+
+return 0;
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Post
